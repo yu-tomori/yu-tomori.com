@@ -1,0 +1,40 @@
+:root {
+    /* colors */
+    --bg-color: E2E2E2;
+    --black: 2F2F2F;
+    --gray: 5B5B5B;
+    --blue: 0056CE;
+
+    /* font-size */
+    --text-extra-large: 24px;
+    --text-large: 20px;
+    --text-medium: 16px;
+    --text-small: 13px;
+
+    /* space */
+    --global-vertical-interval: 16px;
+    --global-padding: 100px 20px;
+}
+
+body {
+    background-color: var(--bg-color);
+
+    /* font styles */
+    color: var(--black);
+    font-family: "Noto Sans JP", serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-size: var(--text-medium);
+}
+
+a {
+    color: var(--black);
+    text-decoration: underline;
+}
+
+.main-link {
+    color: var(--blue);
+    font-size: var(--text-large);
+    text-decoration: underline;
+}
