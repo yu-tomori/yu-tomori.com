@@ -36,19 +36,19 @@ const Home = () => {
                 <NavLink to="posts">
                     <Link>posts</Link>
                 </NavLink>
-                <NavLink to="posts">
+                <NavLink to="biography">
                     <Link>biography</Link>
                 </NavLink>
             </LinksContainer>
 
             <SectionTitle>ACCOUNTS</SectionTitle>
             <LinksContainer>
-                <NavLink to="posts">
-                    <Link>twitter</Link>
-                </NavLink>
-                <NavLink to="posts">
+                <a href="https://x.com/yu_tomori_" target="_blank">
+                    <Link>x</Link>
+                </a>
+                <a href="https://github.com/yu-tomori" target="_blank">
                     <Link>github</Link>
-                </NavLink>
+                </a>
             </LinksContainer>
             </Container>
         </Layout>
