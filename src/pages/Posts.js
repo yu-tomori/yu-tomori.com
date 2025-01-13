@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, use } from 'react';
 import styled from 'styled-components';
 import Layout from "../components/Layout";
 import { createClient } from '@supabase/supabase-js'
@@ -31,33 +31,29 @@ const PostItem = styled.li`
     }
 `;
 
+// for suspense boundary
+const Inner = ({ data }) => {
+    const {data: posts}= use(data)
+    return (
+        <PostsContainer>
+            <PostsList>
+                {posts.map((post) => (
+                    <PostItem key={post.id}>
+                        {post.id} {post.created_at}
+                    </PostItem>
+                ))}
+            </PostsList>
+        </PostsContainer>
+    )
+}
+
 const Posts = () => {
-    const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const { data, error } = await supabase.from('posts').select()
-            if (error) {
-                console.error(error)
-            } else {
-                setPosts(data)
-            }
-        }
-
-        fetchPosts()
-    }, [])
-
+    const data = supabase.from('posts').select();
     return (
         <Layout>
-            <PostsContainer>
-                <PostsList>
-                    {posts.map((post) => (
-                        <PostItem key={post.id}>
-                            {post.id} {post.created_at}
-                        </PostItem>
-                    ))}
-                </PostsList>
-            </PostsContainer>
+            <Suspense>
+                <Inner data={data} />
+            </Suspense>
         </Layout>
     );
 };
