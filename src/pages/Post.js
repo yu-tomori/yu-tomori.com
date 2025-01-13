@@ -1,7 +1,6 @@
 import React, { Suspense, use } from 'react'
 import { useParams } from 'react-router-dom';
 import { createClient } from '@supabase/supabase-js'
-import styled from 'styled-components';
 import Layout from "../components/Layout";
 import Markdown from 'react-markdown'
 import mdComponents from '../components/markdown'
@@ -20,7 +19,6 @@ const Inner = ({ data }) => {
 
 const Post = () => {
     const { id } = useParams()
-    console.log("id: ", id)
     const data = supabase.from('posts').select().eq('id', id)
     return (
         <Layout>

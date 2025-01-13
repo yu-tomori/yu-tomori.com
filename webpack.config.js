@@ -8,6 +8,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'index_bundle.js',
+        publicPath: '/',
     },
     target: 'web',
     devServer: {
@@ -36,10 +37,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, 'public', 'index.html')
         }),
-        new Dotenv({
-            systemvars: true,
-            safe: true,
-            allowEmptyValues: true
-        })
-    ]
-}
+        new Dotenv(),
+    ],
+};
