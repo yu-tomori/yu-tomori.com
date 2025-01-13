@@ -1,16 +1,13 @@
 import React, { Suspense, use } from 'react';
 import styled from 'styled-components';
+import { NavLink } from "react-router-dom";
 import Layout from "../components/Layout";
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://sravcubcggcbhozcsyvo.supabase.co'
 const supabase = createClient(supabaseUrl, process.env.SUPABASE_KEY)
 
-const PostsList = styled.ul`
-    list-style-type: none;
-`;
-
-const PostItem = styled.li`
+const PostItem = styled.div`
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 4px;
@@ -39,14 +36,16 @@ const Inner = ({ data }) => {
         return date.slice(0, 10).replaceAll('-', '/')
     }
     return (
-        <PostsList>
+        <>
             {posts.map((post) => (
-                <PostItem key={post.id}>
-                    <Title>{post.title}</Title>
-                    <Date>{formatDate(post.created_at)}</Date>
-                </PostItem>
+                <NavLink to={'/posts/' + post.id} key={post.id}>
+                    <PostItem key={post.id}>
+                        <Title>{post.title}</Title>
+                        <Date>{formatDate(post.created_at)}</Date>
+                    </PostItem>
+                </NavLink>
             ))}
-        </PostsList>
+        </>
     )
 }
 
