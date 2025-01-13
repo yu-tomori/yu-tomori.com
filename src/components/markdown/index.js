@@ -4,8 +4,8 @@
 import React from 'react'
 
 const margins = {
-    marginTop: '10px',
-    marginBottom: '10px'
+    marginTop: '20px',
+    marginBottom: '20px'
 }
 
 const h1 = ({ node, ...props }) => (
