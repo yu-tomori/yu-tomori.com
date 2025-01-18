@@ -1,11 +1,7 @@
-import React, { Suspense, use } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { NavLink } from "react-router-dom";
-import Layout from "../components/Layout";
-import { createClient } from '@supabase/supabase-js'
-
-const supabaseUrl = 'https://sravcubcggcbhozcsyvo.supabase.co'
-const supabase = createClient(supabaseUrl, process.env.SUPABASE_KEY)
+import { NavLink } from 'react-router-dom';
+import Layout from '../components/Layout';
 
 const PostItem = styled.div`
     padding: 10px;
@@ -21,41 +17,64 @@ const Title = styled.p`
     color: var(--blue);
     text-decoration: underline;
     font-size: var(--text-medium);
-`
+`;
 
 const Date = styled.p`
     color: var(--black);
     font-size: var(--text-small);
-`
+`;
 
-// for suspense boundary
-const Inner = ({ data }) => {
-    const {data: posts}= use(data)
-
-    const formatDate = (date) => { // rfc3339
-        return date.slice(0, 10).replaceAll('-', '/')
+const LoadingDots = styled.p`
+    font-size: 1.5em;
+    &:after {
+        content: ' .';
+        animation: dots 1s steps(5, end) infinite;
     }
-    return (
-        <>
-            {posts.map((post) => (
-                <NavLink to={'/posts/' + post.id} key={post.id}>
-                    <PostItem key={post.id}>
-                        <Title>{post.title}</Title>
-                        <Date>{formatDate(post.created_at)}</Date>
-                    </PostItem>
-                </NavLink>
-            ))}
-        </>
-    )
-}
+`;
 
 const Posts = () => {
-    const data = supabase.from('posts').select();
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch('/posts.json');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                setPosts(data);
+            } catch (error) {
+                console.error('Error loading posts:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
+    const formatDate = (date) => {
+        return date.replaceAll('-', '/');
+    };
+
+    console.log("posts: ", posts);
+
     return (
         <Layout>
-            <Suspense>
-                <Inner data={data} />
-            </Suspense>
+            {loading ? (
+                <LoadingDots>Loading</LoadingDots>
+            ) : (
+                posts.map((post) => (
+                    <NavLink to={'/posts/' + post.slug} key={post.slug}>
+                        <PostItem>
+                            <Title>{post.title}</Title>
+                            <Date>{formatDate(post.date)}</Date>
+                        </PostItem>
+                    </NavLink>
+                ))
+            )}
         </Layout>
     );
 };

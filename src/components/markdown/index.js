@@ -10,6 +10,7 @@ const margins = {
 
 const h1 = ({ node, ...props }) => (
     <h1 style={{
+        fontSize: '24px',
         fontWeight: 'normal',
         ...margins
     }} {...props} />
@@ -17,21 +18,24 @@ const h1 = ({ node, ...props }) => (
 
 const h2 = ({ node, ...props }) => (
     <h2 style={{
-        fontWeight: 'normal',
+        fontSize: '18px',
+        fontWeight: 'bold',
         ...margins
     }} {...props} />
 )
 
 const h3 = ({ node, ...props }) => (
     <h3 style={{
-        fontWeight: 'normal',
+        fontSize: '16px',
+        fontWeight: 'bold',
         ...margins
     }} {...props} />
 )
 
 const h4 = ({ node, ...props }) => (
     <h4 style={{
-        fontWeight: 'normal',
+        fontSize: '13px',
+        fontWeight: 'bold',
         ...margins
     }} {...props} />
 )

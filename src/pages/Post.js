@@ -1,40 +1,57 @@
-import React, { Suspense, use } from 'react'
-import { useParams } from 'react-router-dom';
-import { createClient } from '@supabase/supabase-js'
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import Markdown from 'react-markdown'
-import mdComponents from '../components/markdown'
+import { useParams } from 'react-router-dom';
+import Markdown from 'react-markdown';
+import mdComponents from '../components/markdown';
 import Layout from "../components/Layout";
-
-const supabaseUrl = 'https://sravcubcggcbhozcsyvo.supabase.co'
-const supabase = createClient(supabaseUrl, process.env.SUPABASE_KEY)
+import LoadingDots from '../components/LoadingDots';
 
 const Title = styled.p`
     font-size: var(--text-large);
-`
+`;
 
-const Inner = ({ data }) => {
-    const { data: result } = use(data)
-    const post = result[0]
-    console.log(post);
-    return (
-        <>
-            <Title>{post.title}</Title>
-            <Markdown components={mdComponents}>{post.content}</Markdown>
-        </>
-    )
-}
+const usePost = (slug) => {
+    const [postContent, setPostContent] = useState('');
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPost = async () => {
+            try {
+                // Simulate network delay
+                await new Promise(resolve => setTimeout(resolve, 2000));
+
+                const response = await fetch(`/posts/${slug}.md`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const text = await response.text();
+                setPostContent(text);
+            } catch (error) {
+                console.error('Error loading post:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPost();
+    }, [slug]);
+
+    return { postContent, loading };
+};
 
 const Post = () => {
-    const { id } = useParams()
-    const data = supabase.from('posts').select().eq('id', id)
+    const { slug } = useParams();
+    console.log("slug: ", slug)
+    const { postContent, loading } = usePost(slug);
+
     return (
         <Layout>
-            <Suspense fallback={<p>loading...</p>}>
-                <Inner data={data} />
-            </Suspense>
+            {loading && <LoadingDots>loading</LoadingDots>}
+            {!loading &&
+                <Markdown components={mdComponents}>{postContent}</Markdown>
+            }
         </Layout>
-    )
-}
+    );
+};
 
-export default Post
+export default Post;

@@ -24,10 +24,10 @@ const Breadcrumbs = () => {
         <Wrapper>
             <NavLink to="/">yu-tomori.com</NavLink><span> / </span>
 
-            {links.slice(0, -1).map((path, i) => (
-                <>
-                    <NavLink to={path}>{path}</NavLink><span> / </span>
-                </>
+            {links.map((path, i) => (
+                <React.Fragment key={i}>
+                    <NavLink to={"/" + path}>{path}</NavLink><span> / </span>
+                </React.Fragment>
             ))}
 
             <span>{last}</span>
