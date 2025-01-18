@@ -18,7 +18,7 @@ const usePost = (slug) => {
         const fetchPost = async () => {
             try {
                 // Simulate network delay
-                await new Promise(resolve => setTimeout(resolve, 2000));
+                // await new Promise(resolve => setTimeout(resolve, 2000));
 
                 const response = await fetch(`/posts/${slug}.md`);
                 if (!response.ok) {

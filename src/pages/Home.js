@@ -41,13 +41,13 @@ const Home = () => {
                 </NavLink>
             </LinksContainer>
 
-            <SectionTitle>ACCOUNTS</SectionTitle>
+            <SectionTitle>OUTER LINKS</SectionTitle>
             <LinksContainer>
                 <a href="https://x.com/yu_tomori_" target="_blank">
-                    <Link>x</Link>
+                    <Link>x.com/yu_tomori_</Link>
                 </a>
                 <a href="https://github.com/yu-tomori" target="_blank">
-                    <Link>github</Link>
+                    <Link>github.com/yu-tomori</Link>
                 </a>
             </LinksContainer>
             </Container>
