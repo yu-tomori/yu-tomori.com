@@ -41,7 +41,6 @@ const usePost = (slug) => {
 
 const Post = () => {
     const { slug } = useParams();
-    console.log("slug: ", slug)
     const { postContent, loading } = usePost(slug);
 
     return (

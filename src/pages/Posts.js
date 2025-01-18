@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import Layout from '../components/Layout';
+import LoadingDots from '../components/LoadingDots';
 
 const PostItem = styled.div`
     padding: 10px;
@@ -22,14 +23,6 @@ const Title = styled.p`
 const Date = styled.p`
     color: var(--black);
     font-size: var(--text-small);
-`;
-
-const LoadingDots = styled.p`
-    font-size: 1.5em;
-    &:after {
-        content: ' .';
-        animation: dots 1s steps(5, end) infinite;
-    }
 `;
 
 const Posts = () => {
