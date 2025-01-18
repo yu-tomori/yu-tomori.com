@@ -52,8 +52,6 @@ const Posts = () => {
         return date.replaceAll('-', '/');
     };
 
-    console.log("posts: ", posts);
-
     return (
         <Layout>
             {loading ? (

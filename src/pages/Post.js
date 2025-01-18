@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import Markdown from 'react-markdown';
 import mdComponents from '../components/markdown';
 import Layout from "../components/Layout";
 import LoadingDots from '../components/LoadingDots';
-
-const Title = styled.p`
-    font-size: var(--text-large);
-`;
 
 const usePost = (slug) => {
     const [postContent, setPostContent] = useState('');
