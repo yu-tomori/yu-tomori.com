@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: './index.js',
@@ -22,7 +23,7 @@ module.exports = {
         historyApiFallback: true,
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.json'],
+        extensions: ['.js', '.jsx', '.json', '.md'],
     },
     module: {
         rules: [
@@ -31,6 +32,13 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'babel-loader',
             },
+            {
+                test: /\.md$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'posts/[name][ext]'
+                }
+            }
         ],
     },
     plugins: [
@@ -38,5 +46,21 @@ module.exports = {
             template: path.join(__dirname, 'public', 'index.html')
         }),
         new Dotenv(),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'public/posts.json',
+                    to: 'posts.json'
+                },
+                {
+                    from: 'public/style.css',
+                    to: 'style.css'
+                },
+                {
+                    from: 'public/posts/*.md',
+                    to: 'posts/[name][ext]'
+                }
+            ],
+        }),
     ],
 };
