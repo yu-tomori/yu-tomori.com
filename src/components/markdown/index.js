@@ -13,8 +13,8 @@ const h1 = ({ node, ...props }) => (
         fontSize: '24px',
         fontWeight: 'normal',
         ...margins
-    }} {...props} />
-)
+        }} {...props} />
+    )
 
 const h2 = ({ node, ...props }) => (
     <h2 style={{
@@ -46,9 +46,16 @@ const li = ({ node, ...props }) => (
     }} {...props} />
 )
 
+const img = ({ node, ...props }) => (
+    <img style={{
+        maxWidth: '100%',
+        ...margins
+    }} {...props} />
+)
+
 
 const mdComponents = {
-    li, h1, h2, h3, h4
+    li, h1, h2, h3, h4, img
 }
 
 export default mdComponents
