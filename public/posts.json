@@ -1,5 +1,11 @@
 [
     {
+        "title" : "このブログの技術的詳細について",
+        "slug" : "this-blogs-architecture",
+        "date" : "2025-02-02",
+        "tags" : ["dev"]
+    },
+    {
         "title" : "2025年の目標はブログを書くこと",
         "slug" : "this-blog-started",
         "date" : "2025-01-18",
