@@ -59,6 +59,10 @@ module.exports = {
                 {
                     from: 'public/posts/*.md',
                     to: 'posts/[name][ext]'
+                },
+                {
+                    from: 'public/posts/images/*',
+                    to: 'posts/images/[name][ext]'
                 }
             ],
         }),
