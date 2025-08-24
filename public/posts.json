@@ -1,5 +1,11 @@
 [
     {
+        "title" : "センスとは工学だと思う",
+        "slug" : "about-sense",
+        "date" : "2025-08-24",
+        "tags" : []
+    },
+    {
         "title" : "このブログの技術的詳細について",
         "slug" : "this-blogs-architecture",
         "date" : "2025-02-02",
