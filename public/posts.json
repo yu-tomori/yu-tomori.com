@@ -1,15 +1,21 @@
 [
     {
+        "title" : "何年もあっていない旧友に会う",
+        "slug" : "catching-up-with-a-old-friend",
+        "date" : "2025-09-27",
+        "tags" : ["life"]
+    },
+    {
         "title" : "うまくいかなさを貯める。心を開く",
         "slug" : "stock-disabilities",
         "date" : "2025-08-27",
-        "tags" : []
+        "tags" : ["life"]
     },
     {
         "title" : "センスとは工学だと思う",
         "slug" : "about-sense",
         "date" : "2025-08-24",
-        "tags" : []
+        "tags" : ["life"]
     },
     {
         "title" : "このブログの技術的詳細について",
