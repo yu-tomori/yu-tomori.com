@@ -12,10 +12,11 @@ const Biography = () => {
         <Layout>
             <ul>
                 <Li>Yu Tomori</Li>
-                <Li>Born in Okinawa, now in Kamakura.</Li>
+                <Li>I was born in Okinawa, now living in Kanazawa.</Li>
+	    	<Li>I have lived in Okinawa, Yokohama, Kamakura, and Kanazawa.</Li>
                 <Li>Product Manager at PortX Inc., working on Logistics Spend Management.</Li>
                 <Li>
-                    I worked 4 years as a software engineer before this job.
+                    I had worked for 4 years as a software engineer before this job.
                 </Li>
                 <Li>
                     My passionates
