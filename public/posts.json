@@ -1,5 +1,11 @@
 [
     {
+        "title" : "a new life",
+        "slug" : "a-new-life",
+        "date" : "2025-11-09",
+        "tags" : ["life"]
+    },
+    {
         "title" : "何年もあっていない旧友に会う",
         "slug" : "catching-up-with-a-old-friend",
         "date" : "2025-09-27",
