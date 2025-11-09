@@ -16,13 +16,10 @@ const LinksContainer = styled.div`
 `
 
 const SectionTitle = styled.p`
-    font-size: var(--text-large);
-    color: var(--gray);
 `
 
 const Link = styled.p`
     color: var(--blue);
-    font-size: var(--text-large);
     text-decoration: underline;
     text-decoration-color: var(--blue);
 `
