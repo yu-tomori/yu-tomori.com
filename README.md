@@ -8,5 +8,5 @@ Left tasks are below.
     - I plan to write a post about what motivates me for this project.
 - [x] execute first release (Cloudflare)
 - [ ] decide next tasks for improvements
-    - introduce formatter(?)
-    - introduce typescript
+    - pre-render post page
+    - introduce Google Analytics
