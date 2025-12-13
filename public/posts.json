@@ -1,5 +1,11 @@
 [
     {
+        "title" : "ユーザインタビューの心得",
+        "slug" : "mind-for-user-interview",
+        "date" : "2025-12-13",
+        "tags" : ["dev"]
+    },
+    {
         "title" : "自分で考えるチームをつくる",
         "slug" : "the-word-trap",
         "date" : "2025-12-07",
