@@ -1,5 +1,11 @@
 [
     {
+        "title" : "「S3の深淵を知るためにAmazonの奥地へ行った」を読んだ",
+	"slug" : "learn-aws",
+        "date" : "2025-12-14",
+        "tags" : ["dev"]
+    },
+    {
         "title" : "ユーザインタビューの心得",
         "slug" : "mind-for-user-interview",
         "date" : "2025-12-13",
