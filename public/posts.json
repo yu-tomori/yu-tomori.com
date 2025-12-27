@@ -1,5 +1,11 @@
 [
     {
+        "title" : "エンタープライズ向けにSaaSを提供するということ",
+	"slug" : "enterprise-saas-can-exist",
+        "date" : "2025-12-27",
+        "tags" : ["dev"]
+    },
+    {
         "title" : "「S3の深淵を知るためにAmazonの奥地へ行った」を読んだ",
 	"slug" : "learn-aws",
         "date" : "2025-12-14",
