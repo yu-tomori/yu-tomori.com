@@ -1,5 +1,11 @@
 [
     {
+        "title" : "ブログを書くということ",
+	"slug" : "writing-blog-posts",
+        "date" : "2026-01-01",
+        "tags" : ["life"]
+    },
+    {
         "title" : "2025年の振り返り",
 	"slug" : "2025",
         "date" : "2025-12-31",
