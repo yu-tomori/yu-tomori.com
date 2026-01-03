@@ -53,9 +53,21 @@ const img = ({ node, ...props }) => (
     }} {...props} />
 )
 
+const blockquote = ({ node, ...props }) => (
+    <blockquote style={{
+        borderLeft: '4px solid var(--gray)',
+        marginLeft: '0',
+        marginRight: '0',
+        paddingLeft: '16px',
+        color: 'var(--dark-gray)',
+        fontStyle: 'italic',
+        ...margins
+    }} {...props} />
+)
+
 
 const mdComponents = {
-    li, h1, h2, h3, h4, img
+    li, h1, h2, h3, h4, img, blockquote
 }
 
 export default mdComponents
