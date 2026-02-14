@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import KaoruBirthday2026 from "./KaoruBirthday2026"
+import { default as KaoruBirthday2026 } from "./KaoruBirthday2026.js"
 
 const Private = () => {
 	const { slug } = useParams()
