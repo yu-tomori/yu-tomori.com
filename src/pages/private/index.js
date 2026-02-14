@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
 import { default as KaoruBirthday2026 } from "./KaoruBirthday2026.js"
 
