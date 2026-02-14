@@ -49,6 +49,10 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 {
+                    from: 'public/images/*',
+                    to: 'images/[name][ext]'
+                },
+                {
                     from: 'public/posts.json',
                     to: 'posts.json'
                 },

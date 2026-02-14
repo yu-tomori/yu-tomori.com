@@ -101,7 +101,7 @@ const KaoruBirthday2026 = () => {
 
 	      <Front>
 		<ImgSet>
-		  <img src="../../images/birthday-img.png" alt="birthday" />
+		  <img src="/images/birthday-img.png" alt="birthday" />
 		</ImgSet>
 	      </Front>
 	    </Card>
